@@ -3,11 +3,17 @@ import pandas as pd
 from ast import literal_eval
 
 
-def drawTrajectory(latitudes, longitudes, path):
+def drawTrajectory(latitudes, longitudes, path, redPath = False):
     length = len(latitudes)
-    gmap = gmplot.GoogleMapPlotter(latitudes[length / 2], longitudes[length / 2], 12)
-    gmap.plot(latitudes, longitudes, 'cornflowerblue', edge_width=5)
 
+    if not redPath:
+        gmap = gmplot.GoogleMapPlotter(latitudes[length / 2], longitudes[length / 2], 12)
+        gmap.plot(latitudes, longitudes, 'cornflowerblue', edge_width = 5)
+    else:
+        gmap = gmplot.GoogleMapPlotter(latitudes[0][length / 2], longitudes[0][length / 2], 12)
+        gmap.plot(latitudes[0], longitudes[0], '#008000', edge_width = 5)
+        gmap.plot(latitudes[1], longitudes[1], '#FF0000', edge_width = 5)
+        
     gmap.draw(path)
     print 'Result in ' + path
 
