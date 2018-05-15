@@ -19,16 +19,17 @@ def haversine(lat1, long1, lat2, long2):
 
     return dst
 
+
 def DTW(seq1, seq2):
     N = len(seq1)
     M = len(seq2)
     dtwArr = [[0] * (M + 1) for i in range(N + 1)]
     
     for i in range(1, N + 1):
-        dtwArr[i][0] = -1
+        dtwArr[i][0] = float('inf') 
 
     for i in range(1, M + 1):
-        dtwArr[0][i] = -1
+        dtwArr[0][i] = float('inf')
     
     for i in range(1, N + 1):
         for j in range(1, M + 1):
@@ -37,3 +38,42 @@ def DTW(seq1, seq2):
             dtwArr[i][j] = cost + min(min(dtwArr[i - 1][j], dtwArr[i][j - 1]), dtwArr[i - 1][j - 1])
 
     return dtwArr[N][M]
+
+
+def LCS(seq1, seq2):
+    THRESHOLD = 0.2 # 200 meters
+    
+    N = len(seq1)
+    M = len(seq2)
+    lcsArr = [[0] * (M + 1) for i in range(N + 1)]
+
+    for i in range(1, N + 1):
+        for j in range(1, M + 1):
+            lcsArr[i][j] = max(max(lcsArr[i - 1][j], lcsArr[i][j - 1]), lcsArr[i - 1][j - 1])
+
+            # seq[2] = latitude, seq[1] = longitude
+            cost = haversine(seq1[i - 1][2], seq1[i - 1][1], seq2[j - 1][2], seq2[j - 1][1])
+
+            if cost <= THRESHOLD:
+                lcsArr[i][j] = max(lcsArr[i][j], lcsArr[i - 1][j - 1] + 1)
+    
+    path = []
+    i, j = N, M
+
+    while i >= 1 and j >= 1:
+        # seq[2] = latitude, seq[1] = longitude
+        cost = haversine(seq1[i - 1][2], seq1[i - 1][1], seq2[j - 1][2], seq2[j - 1][1])
+
+        if cost <= THRESHOLD:
+            path.append(seq1[i - 1])
+            i -= 1
+            j -= 1
+        else:
+            if lcsArr[i - 1][j] > lcsArr[i][j - 1]:
+                i -= 1
+            else:
+                j -= 1
+
+    path = path[::-1]
+
+    return lcsArr[N][M], path
