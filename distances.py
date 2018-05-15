@@ -48,12 +48,11 @@ def LCS(seq1, seq2):
     lcsArr = [[0] * (M + 1) for i in range(N + 1)]
 
     for i in range(1, N + 1):
-        for j in range(1, M + 1):
-            lcsArr[i][j] = max(max(lcsArr[i - 1][j], lcsArr[i][j - 1]), lcsArr[i - 1][j - 1])
-
+        for j in range(1, M + 1): 
             # seq[2] = latitude, seq[1] = longitude
             cost = haversine(seq1[i - 1][2], seq1[i - 1][1], seq2[j - 1][2], seq2[j - 1][1])
-
+            lcsArr[i][j] = max(max(lcsArr[i - 1][j], lcsArr[i][j - 1]), lcsArr[i - 1][j - 1])
+ 
             if cost <= THRESHOLD:
                 lcsArr[i][j] = max(lcsArr[i][j], lcsArr[i - 1][j - 1] + 1)
     
