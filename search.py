@@ -29,7 +29,7 @@ def findClosestNeighbors(trainSet, testSet, method):
             latitudes.append(elem[2])
             longitudes.append(elem[1])
         
-        path = 'static/mymapDTW' + str(testIndex) + '.html'
+        path = 'static/mymap' + method + str(testIndex) + '.html'
         drawTrajectory(latitudes, longitudes, path)
 
         # operate on five closest neighbors
@@ -61,8 +61,8 @@ def findClosestNeighbors(trainSet, testSet, method):
                 longitudes = [longitudes, redLong]
 
             print
-            path = 'static/mymapDTW' + str(testIndex) + '-' + str(i) + '.html'
-            drawTrajectory(latitudes, longitudes, path, True)
+            path = 'static/mymap' + method + str(testIndex) + '-' + str(i) + '.html'
+            drawTrajectory(latitudes, longitudes, path, method == 'LCS')
  
             print 'Neighbor', (i + 1)
             print 'JP_ID:', jupIdList[pos]
@@ -83,7 +83,7 @@ def main():
                           converters={'Trajectory': literal_eval})
     
     trainSet = trainSet[:1000]
-    findClosestNeighbors(trainSet, testSet, 'LCS')
+    findClosestNeighbors(trainSet, testSet, 'DTW')
 
 
 if __name__ == '__main__':
