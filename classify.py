@@ -26,14 +26,29 @@ def crossValidation(clf, allSequences, categoryIds, le):
     print 'Accuracy: ', accur
 
 
+def writeInCsv(predCategs):
+    # write prediction in csv file
+    predInfo = {
+        'Test_Trip_ID': [],
+        'Predicted_JourneyPatternID': []
+    }
+
+    for i in range(len(predCategs)):
+        predInfo['Test_Trip_ID'].append(i)
+        predInfo['Predicted_JourneyPatternID'].append(predCategs[i])
+
+    df = pd.DataFrame(predInfo, columns=['Test_Trip_ID', 'Predicted_JourneyPatternID'])
+    df.to_csv('Predicted_JourneyPatternID.csv', sep='\t', index=False)
+
+
 def main():
     trainSet = pd.read_csv('datasets/small_train_set.csv', # TODO CHANGE TO REAL DATASET
                             converters={'Trajectory': literal_eval})
 
-    testSet = pd.read_csv('datasets/test_set_a1.csv',
+    testSet = pd.read_csv('datasets/test_set_a2.csv',
                           converters={'Trajectory': literal_eval})
     
-    trainSet = trainSet[:40]
+    trainSet = trainSet[:20]
 
     # labels for categories
     le = preprocessing.LabelEncoder()
@@ -48,11 +63,13 @@ def main():
     clf = KNN(5, DTW)
     clf.fit(allSequences, categoryIds)
     
+    crossValidation(clf, allSequences, categoryIds, le)
+    
     # predict the categories for the testSet
     predIds = clf.predict(testSet['Trajectory'])
     predCategs = le.inverse_transform(predIds)
-
-    crossValidation(clf, allSequences, categoryIds, le)
+    
+    writeInCsv(predCategs) 
 
     
 if __name__ == '__main__':

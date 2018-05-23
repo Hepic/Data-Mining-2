@@ -79,7 +79,7 @@ def main():
     trainSet = pd.read_csv('datasets/train_set.csv',
                             converters={'Trajectory': literal_eval})
 
-    testSet = pd.read_csv('datasets/test_set_a1.csv',
+    testSet = pd.read_csv('datasets/test_set_a1.csv', #TODO USE THE APPROPRIATE FILE
                           converters={'Trajectory': literal_eval})
     
     trainSet = trainSet[:1000]
