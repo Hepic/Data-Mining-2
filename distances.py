@@ -65,14 +65,11 @@ def LCS(seq1, seq2):
 
         if cost <= THRESHOLD:
             path.append(seq1[i - 1])
+            i, j = i - 1, j - 1 
+        elif lcsArr[i - 1][j] > lcsArr[i][j - 1]:
             i -= 1
-            j -= 1
         else:
-            if lcsArr[i - 1][j] > lcsArr[i][j - 1]:
-                i -= 1
-            else:
-                j -= 1
+            j -= 1
 
     path = path[::-1]
-
     return lcsArr[N][M], path

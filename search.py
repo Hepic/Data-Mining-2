@@ -1,4 +1,4 @@
-import gmplot
+import gmplot, time
 import pandas as pd
 from ast import literal_eval
 from distances import DTW, LCS
@@ -17,7 +17,7 @@ def findClosestNeighbors(trainSet, testSet, method):
                 ret = DTW(testRow['Trajectory'], trainRow['Trajectory'])
             elif method == 'LCS':
                 ret = LCS(testRow['Trajectory'], trainRow['Trajectory'])
-                ret = (-ret[0], ret[1])
+                ret = (-ret[0], ret[1]) # keep both, the value of LCS and the path
             
             dists.append((ret, trainRow['tripId']))
 
@@ -29,7 +29,7 @@ def findClosestNeighbors(trainSet, testSet, method):
             latitudes.append(elem[2])
             longitudes.append(elem[1])
         
-        path = 'static/mymap' + method + str(testIndex) + '.html'
+        path = 'static/query2_' + method + '_' + str(testIndex) + '.html'
         drawTrajectory(latitudes, longitudes, path)
 
         # operate on five closest neighbors
@@ -39,7 +39,7 @@ def findClosestNeighbors(trainSet, testSet, method):
             trajectList = trainSet['Trajectory'].tolist()
 
             neighId = dists[i][1]
-            pos = tripIdList.index(neighId)
+            pos = tripIdList.index(neighId) # position of that trajectory in the train file
 
             latitudes, longitudes =  [], []
 
@@ -53,6 +53,7 @@ def findClosestNeighbors(trainSet, testSet, method):
                 lcsPath = dists[i][0][1]
                 redLat, redLong = [], []
                 
+                # elem[2] = latitude, elem[1] = longitude
                 for elem in lcsPath:
                     redLat.append(elem[2])
                     redLong.append(elem[1])
@@ -61,14 +62,14 @@ def findClosestNeighbors(trainSet, testSet, method):
                 longitudes = [longitudes, redLong]
 
             print
-            path = 'static/mymap' + method + str(testIndex) + '-' + str(i) + '.html'
+            path = 'static/query2_' + method + '_' + str(testIndex) + '_' + str(i) + '.html'
             drawTrajectory(latitudes, longitudes, path, method == 'LCS')
  
             print 'Neighbor', (i + 1)
             print 'JP_ID:', jupIdList[pos]
 
             if method == 'DTW':
-                print 'DTW:', dists[i][0]
+                print 'DTW:' + str(dists[i][0]) + 'km'
             elif method == 'LCS':
                 print '#Matching Points:', -dists[i][0][0]
 
@@ -78,12 +79,22 @@ def findClosestNeighbors(trainSet, testSet, method):
 def main():
     trainSet = pd.read_csv('datasets/train_set.csv',
                             converters={'Trajectory': literal_eval})
-
-    testSet = pd.read_csv('datasets/test_set_a1.csv', #TODO USE THE APPROPRIATE FILE
-                          converters={'Trajectory': literal_eval})
     
-    trainSet = trainSet[:1000]
-    findClosestNeighbors(trainSet, testSet, 'DTW')
+    trainSet = trainSet[:200]
+    dist = 'LCS' # Set method with this variable
+
+    if dist == 'DTW':
+        testSet = pd.read_csv('datasets/test_set_a1.csv',
+                              converters={'Trajectory': literal_eval})
+    elif dist == 'LCS':
+        testSet = pd.read_csv('datasets/test_set_a2.csv',
+                              converters={'Trajectory': literal_eval})
+   
+    startTime = time.time()
+    findClosestNeighbors(trainSet, testSet, dist)
+    elapsedTime = time.time() - startTime
+    
+    print 'Time:', str(round(elapsedTime, 2)) + 'sec'
 
 
 if __name__ == '__main__':

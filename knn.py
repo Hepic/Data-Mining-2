@@ -9,6 +9,7 @@ class KNN(BaseEstimator):
         self.distFunc = distFunc
 
     def fit(self, data, ids):
+        self.data = []
         self.data.extend(zip(data, ids))
         
     def predict(self, predData):

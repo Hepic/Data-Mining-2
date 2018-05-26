@@ -37,7 +37,7 @@ def main():
             latitudes.append(elem[2])
             longitudes.append(elem[1])
         
-        path = 'static/mymap' + str(index) + '.html'
+        path = 'static/query1_' + str(index) + '.html'
         drawTrajectory(latitudes, longitudes, path)
         
         if (len(roadsId) >= 5):

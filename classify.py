@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 
 
 def crossValidation(clf, allSequences, categoryIds, le):
-    splits, accur = 4, 0
+    splits, accur = 10, 0
     kf = KFold(n_splits=splits)
     
     # Splits data to train and test data
@@ -42,13 +42,13 @@ def writeInCsv(predCategs):
 
 
 def main():
-    trainSet = pd.read_csv('datasets/small_train_set.csv', # TODO CHANGE TO REAL DATASET
+    trainSet = pd.read_csv('datasets/train_set.csv',
                             converters={'Trajectory': literal_eval})
 
     testSet = pd.read_csv('datasets/test_set_a2.csv',
                           converters={'Trajectory': literal_eval})
     
-    trainSet = trainSet[:20]
+    trainSet = trainSet[:100]
 
     # labels for categories
     le = preprocessing.LabelEncoder()
@@ -61,10 +61,10 @@ def main():
     
     # initialize KNN classifier
     clf = KNN(5, DTW)
-    clf.fit(allSequences, categoryIds)
-    
+
     crossValidation(clf, allSequences, categoryIds, le)
-    
+    clf.fit(allSequences, categoryIds)
+
     # predict the categories for the testSet
     predIds = clf.predict(testSet['Trajectory'])
     predCategs = le.inverse_transform(predIds)
