@@ -53,167 +53,326 @@
         οι πέντε κοντινότεροι γείτονες και δημιουργούνται τα plots. \\
         Ο χρόνος Δt είναι κοινός για όλα τα plots γιατί μετράει πόσο χρόνο έκανε το πρόγραμμα για να
         βρει για όλο το testSet όλους τους κοντινότερους γείτονες.
+        
+        \subsection*{A-1}
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 1 \\ Δt=1575sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 01501001 \\ DTW: 0.0km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 01501001 \\ DTW: 3.57km}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 01501001 \\ DTW: 3.79km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 01501001 \\ DTW: 3.98km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 01501001 \\ DTW: 4.1km}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
 
-        \begin{center}
-            \begin{tabular}{| c | c | c |} 
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
-                \captionof*{figure}{\footnotesize{Test Trip 1 \\ Δt=1575sec}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
-                \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 01501001 \\ DTW: 0.0km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
-                \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 01501001 \\ DTW: 3.57km}}
-            \end{minipage} \\              
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
-                \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 01501001 \\ DTW: 3.79km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 01501001 \\ DTW: 3.98km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 01501001 \\ DTW: 4.1km}}
-            \end{minipage} \\
-            \hline
-            \end{tabular}
-        \end{center}
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 2 \\ Δt=1575sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 01200001 \\ DTW: 0.0km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 01200001 \\ DTW: 2.73km}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 01200001 \\ DTW: 3.34km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 01200001 \\ DTW: 3.38km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 01200001 \\ DTW: 3.44km}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
 
-        \begin{center}
-            \begin{tabular}{| c | c | c |} 
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
-                \captionof*{figure}{\footnotesize{Test Trip 2 \\ Δt=1575sec}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
-                \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 01200001 \\ DTW: 0.0km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
-                \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 01200001 \\ DTW: 2.73km}}
-            \end{minipage} \\              
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
-                \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 01200001 \\ DTW: 3.34km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 01200001 \\ DTW: 3.38km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 01200001 \\ DTW: 3.44km}}
-            \end{minipage} \\
-            \hline
-            \end{tabular}
-        \end{center}
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 3 \\ Δt=1575sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 00791001 \\ DTW: 0.0km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 00791001 \\ DTW: 4.69km}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 00791001 \\ DTW: 4.78km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 00791001 \\ DTW: 4.81km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 00791001 \\ DTW: 4.85km}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
 
-        \begin{center}
-            \begin{tabular}{| c | c | c |} 
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
-                \captionof*{figure}{\footnotesize{Test Trip 3 \\ Δt=1575sec}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
-                \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 00791001 \\ DTW: 0.0km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
-                \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 00791001 \\ DTW: 4.69km}}
-            \end{minipage} \\              
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
-                \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 00791001 \\ DTW: 4.78km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 00791001 \\ DTW: 4.81km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 00791001 \\ DTW: 4.85km}}
-            \end{minipage} \\
-            \hline
-            \end{tabular}
-        \end{center}
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 4 \\ Δt=1575sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 00010002 \\ DTW: 0.0km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 00010002 \\ DTW: 2.49km}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 00010002 \\ DTW: 2.86km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 00010002 \\ DTW: 3.23km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 00010002 \\ DTW: 3.4km}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
 
-        \begin{center}
-            \begin{tabular}{| c | c | c |} 
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
-                \captionof*{figure}{\footnotesize{Test Trip 4 \\ Δt=1575sec}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
-                \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 00010002 \\ DTW: 0.0km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
-                \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 00010002 \\ DTW: 2.49km}}
-            \end{minipage} \\              
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
-                \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 00010002 \\ DTW: 2.86km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 00010002 \\ DTW: 3.23km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 00010002 \\ DTW: 3.4km}}
-            \end{minipage} \\
-            \hline
-            \end{tabular}
-        \end{center}
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 5 \\ Δt=1575sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 01300001 \\ DTW: 0.0km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 01300001 \\ DTW: 4.29km}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 01300001 \\ DTW: 4.48km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 01300001 \\ DTW: 4.69km}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 01300001 \\ DTW: 4.7km}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
+        \subsection*{A-2}
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 1 \\ Δt=1110sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 78}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 78}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 76}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 76}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 75}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
+            
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 2 \\ Δt=1110sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 82}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 78}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 75}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 74}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 040D1002 \\ Matching Points: 73}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
+            
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 3 \\ Δt=1110sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 01451008 \\ Matching Points: 40}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 00790001 \\ Matching Points: 40}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 079A0001 \\ Matching Points: 40}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 01451001 \\ Matching Points: 40}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 067X0001 \\ Matching Points: 40}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
 
-        \begin{center}
-            \begin{tabular}{| c | c | c |} 
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
-                \captionof*{figure}{\footnotesize{Test Trip 5 \\ Δt=1575sec}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
-                \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 01300001 \\ DTW: 0.0km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
-                \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 01300001 \\ DTW: 4.29km}}
-            \end{minipage} \\              
-            \hline
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
-                \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 01300001 \\ DTW: 4.48km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 01300001 \\ DTW: 4.69km}}
-            \end{minipage} &
-            \begin{minipage}[t]{0.33\linewidth}
-                \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
-                \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 01300001 \\ DTW: 4.7km}}
-            \end{minipage} \\
-            \hline
-            \end{tabular}
-        \end{center}
-
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 4 \\ Δt=1110sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 00790001 \\ Matching Points: 59}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 00790001 \\ Matching Points: 59}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 00790001 \\ Matching Points: 59}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 00790001 \\ Matching Points: 59}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 00790001 \\ Matching Points: 59}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
+            \begin{center}
+                \begin{tabular}{| c | c | c |} 
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_0.png}
+                    \captionof*{figure}{\footnotesize{Test Trip 5 \\ Δt=1110sec}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_1.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 1 \\ JP\textunderscore ID: 01200001 \\ Matching Points: 73}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_2.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 2 \\ JP\textunderscore ID: 01200001 \\ Matching Points: 73}}
+                \end{minipage} \\              
+                \hline
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_3.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 3 \\ JP\textunderscore ID: 01200002 \\ Matching Points: 72}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 4 \\ JP\textunderscore ID: 01200001 \\ Matching Points: 71}}
+                \end{minipage} &
+                \begin{minipage}[t]{0.33\linewidth}
+                    \includegraphics[width=4cm,height=4cm]{static/query1_4.png}
+                    \captionof*{figure}{\footnotesize{Neighbor 5 \\ JP\textunderscore ID: 01200001 \\ Matching Points: 71}}
+                \end{minipage} \\
+                \hline
+                \end{tabular}
+            \end{center}
 
     \section*{Ερώτημα 3}
         Να γράψω για το voting sheme
