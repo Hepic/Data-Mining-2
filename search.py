@@ -69,7 +69,7 @@ def findClosestNeighbors(trainSet, testSet, method):
             print 'JP_ID:', jupIdList[pos]
 
             if method == 'DTW':
-                print 'DTW:' + str(dists[i][0]) + 'km'
+                print 'DTW: ' + str(dists[i][0]) + 'km'
             elif method == 'LCS':
                 print '#Matching Points:', -dists[i][0][0]
 
@@ -80,7 +80,6 @@ def main():
     trainSet = pd.read_csv('datasets/train_set.csv',
                             converters={'Trajectory': literal_eval})
     
-    trainSet = trainSet[:200]
     dist = 'LCS' # Set method with this variable
 
     if dist == 'DTW':
