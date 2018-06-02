@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 
 
 def crossValidation(clf, allSequences, categoryIds, le):
-    splits, accur = 4, 0
+    splits, accur = 10, 0
     kf = KFold(n_splits=splits)
     
     # Splits data to train and test data
@@ -38,7 +38,7 @@ def writeInCsv(predCategs):
         predInfo['Predicted_JourneyPatternID'].append(predCategs[i])
 
     df = pd.DataFrame(predInfo, columns=['Test_Trip_ID', 'Predicted_JourneyPatternID'])
-    df.to_csv('Predicted_JourneyPatternID.csv', sep='\t', index=False)
+    df.to_csv('testSet_JourneyPatternIDs.csv', sep='\t', index=False)
 
 
 def main():
@@ -48,8 +48,6 @@ def main():
     testSet = pd.read_csv('datasets/test_set_a2.csv',
                           converters={'Trajectory': literal_eval})
     
-    trainSet = trainSet[:600]
-
     # labels for categories
     le = preprocessing.LabelEncoder()
     categoryIds = le.fit_transform(trainSet['journeyPatternId'])   

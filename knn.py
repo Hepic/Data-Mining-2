@@ -28,7 +28,8 @@ class KNN(BaseEstimator):
             
             for i in range(self.K):
                 vecId = allDstQuer[i][1]
-                closerIds[vecId] += 1.0 / float(allDstQuer[i][1])
+                closerIds[vecId] += 1.0
+                #closerIds[vecId] += 1.0 / float(allDstQuer[i][1] + 0.01)
             
             predId = closerIds.most_common(1)[0][0]
             result.append(predId)
